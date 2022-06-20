@@ -32,7 +32,7 @@ const Users = () => {
 
   const navigateToOverview = useCallback((login) => {
     navigate("/user/" + login);
-  }, []);
+  });
 
   return (
     <>
