@@ -56,12 +56,10 @@ const Users = () => {
                   <StyledTableRow
                     key={user.id}
                     onClick={() => {
-                      {
-                        selectedUser
-                          ? navigate("/user/" + user.login)
-                          : setSelectedUser(user.login) &&
-                            navigate("/user/" + user.login);
-                      }
+                      selectedUser
+                        ? navigate("/user/" + user.login)
+                        : setSelectedUser(user.login) &&
+                          navigate("/user/" + user.login);
                     }}
                   >
                     <StyledTableCell component="th" scope="row" align="center">
