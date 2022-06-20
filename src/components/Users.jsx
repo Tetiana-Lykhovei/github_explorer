@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -30,10 +30,6 @@ const Users = () => {
     dispatch(fetchUsersAction(users));
   }, [users, dispatch]);
 
-  const navigateToOverview = useCallback((login) => {
-    navigate("/user/" + login);
-  });
-
   return (
     <>
       <h1>List of 100 GitHub users</h1>
@@ -62,9 +58,9 @@ const Users = () => {
                     onClick={() => {
                       {
                         selectedUser
-                          ? navigateToOverview(user.login)
+                          ? navigate("/user/" + user.login)
                           : setSelectedUser(user.login) &&
-                            navigateToOverview(user.login);
+                            navigate("/user/" + user.login);
                       }
                     }}
                   >
